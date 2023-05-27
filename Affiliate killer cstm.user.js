@@ -1,6 +1,6 @@
 // ==UserScript==
-// @id             Affiliate_killer old
-// @name           Affiliate killer old
+// @id             Affiliate_killer cstm
+// @name           Affiliate killer cstm
 // @version        4.55
 // @namespace      https://greasyfork.org/scripts/456
 // @homepageURL    https://greasyfork.org/scripts/456
@@ -12,9 +12,6 @@
 // @exclude        *images-amazon.com/*
 // @exclude        *google.*tbm=isch*
 // @exclude        *google.*blank.html
-// @grant          GM_log
-// @grant          GM_registerMenuCommand
-// @grant          GM_xmlhttpRequest
 // ==/UserScript==
 
 
