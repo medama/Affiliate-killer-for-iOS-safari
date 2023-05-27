@@ -1,6 +1,6 @@
 // ==UserScript==
-// @id             Affiliate_killer
-// @name           Affiliate killer
+// @id             Affiliate_killer old
+// @name           Affiliate killer old
 // @version        4.55
 // @namespace      https://greasyfork.org/scripts/456
 // @homepageURL    https://greasyfork.org/scripts/456
@@ -13,9 +13,6 @@
 // @exclude        *google.*tbm=isch*
 // @exclude        *google.*blank.html
 // @grant          GM_log
-// @grant          GM_setValue
-// @grant          GM_getValue
-// @grant          GM_deleteValue
 // @grant          GM_registerMenuCommand
 // @grant          GM_xmlhttpRequest
 // ==/UserScript==
@@ -60,7 +57,7 @@ I made this script for myself.
 and uploaded it, since my acquaintance wanted it.
 Add to Original Script too much ,the source code is dirty.
 
-Please use this script on each one of responsibility. 
+Please use this script on each one of responsibility.
 
 IN NO EVENT SHALL EITHER PARTY BE LIABLE TO THE OTHER PARTY.
 
@@ -561,7 +558,7 @@ api.solvemedia.com
 
 //=============プログラム開始===========================================================
 (function() {
-//GM_deleteValue('expDB');
+//localStorage.removeItem('expDB');
 
 	//user config(変更可能)-------------------------------------------------
 	const usrExpandURL = '';	//短縮URLの追加 (add expandURL)
@@ -593,7 +590,7 @@ api.solvemedia.com
 		+ 'u111u.info|ul.lc|urx.nu|urx2.nu|urlgator.com|ustre.am|u.to|ux.nu|v.gd|wk.tk|w.mul.asia|wp.me|www.fiverr.com|www.shortenurl.tk|'
 		+ 'x5.to|xn--.{3}.ws|xtw.me|x.vu|y.ahoo.it|zpr.io|'
 		//RSS
-		+ 'rss.rssad.jp|' 
+		+ 'rss.rssad.jp|'
 		//user settings
 		+ usrExpandURL
 		+ 'snurl.com)\/.');
@@ -821,11 +818,11 @@ return;
 }
 				};
 				setHist(obj);
-                
+
 			}
            */
 
-          
+
 			//短縮URLで複数回リダイレクトした場合、ログインチェック画面の前のURLも表示(商品ページに飛べない場合があるため)
 			if(beforeUrl && beforeUrl != href && beforeUrl != strUrl && obj.getAttribute("Akill_check").match("Done")){
 				//originURL:obj addedURL:obj.nextSibling
@@ -838,9 +835,9 @@ return;
 					histTxt += '<a href="' + histArray[bu] + '" Akill_check="' + chTxt + '" style="display:none;visibility:hidden;" >[BeforeURL' + bu + ']</a>';
 				}
                 obj.setAttribute("Akill_check","killed_checked")
-                obj.insertAdjacentHTML('afterend', histTxt); 
+                obj.insertAdjacentHTML('afterend', histTxt);
                 return;
-                
+
 			}
 			//href = obj.href;
 		}
@@ -1904,7 +1901,7 @@ GM_log("AKiller_amazon_Error:"+e);
 				strUrl = href.replace(/\/af\/.*?\//,"/");
 				strUrl = strUrl.replace(/\/aftype\/.*?\//,"/");
 				strUrl = strUrl.replace(/\/sid\/.*?\//,"/");
-				
+
 				strUrl = "http://www.getchu.com/" + strUrl.replace(/.*\/url\/(.*?)-\//i,"$1");
 			}
 
@@ -1989,7 +1986,7 @@ GM_log("AKiller_amazon_Error:"+e);
 
 				//アフィリエイトIDかどうかURLを「/」で区切って調べる()
 				for(var j=0; j < dmmParams.length; j++) {
-					if(!dmmParams[j].match("=") 
+					if(!dmmParams[j].match("=")
 					&& !dmmParams[j].match(/^#/) && !dmmParams[j].match(/^\?/)){	//ページ内ショートカットリンクなどは除外
 						dmmAffi = dmmParams[j];
 						if(dmmAffi != "") break;
@@ -2144,7 +2141,7 @@ GM_log("AKiller_amazon_Error:"+e);
 				strUrl = getRedirectUrl(href,"url");
 			}
 
-//http://www.awin1.com/cread.php?awinmid=5618&awinaffid=!!!id!!!&clickref=&p=http%3A%2F%2Fwww.okadirect.com%2Foutlet%2F 
+//http://www.awin1.com/cread.php?awinmid=5618&awinaffid=!!!id!!!&clickref=&p=http%3A%2F%2Fwww.okadirect.com%2Foutlet%2F
 		//Affiliate Window(海外系)==============================================================================
 		}else if(host.match("awin1.com")){
 			if(href.match(/(\?|\&)p=http/)){
@@ -2315,7 +2312,7 @@ GM_log("AKiller_amazon_Error:"+e);
 
 		}else if(host.match(/track.xmax.jp/)){
 			getUrl("expand","GET",obj);
-		
+
 		}else if(href.match(/.*(\/ref\/\d+\/affiliate_banner_id\/\d+)/)){
 			strUrl = href.replace(RegExp.$1,'');
 
@@ -2419,7 +2416,7 @@ GM_log("AKiller_amazon_Error:"+e);
 			strUrl = setParams(strUrl,["ad_code","AD_CODE"],"del");
 
 		}
-			
+
 
 //http://dms.netmng.com/si/cm/tracking/clickredirect.aspx?sitrackingid=565231550&siclientid=7722&siadtrackid=31891032366&sinetwork=s&simobile=&sidevice=c
 //http://track.searchignite.com/si/cm/tracking/clickredirect.aspx?sitrackingid=696296406&siclientid=9992&siadtrackid=42697278684&sinetwork=s&simobile=&sidevice=c
@@ -2494,7 +2491,7 @@ try{
 				}
 				if(!flag.match('_checked'))obj.setAttribute("Akill_check",flag.replace(/_checking/igm,'') + "_checked");
 			}
-			
+
 			//何もしない
 			return;
 		}
@@ -2520,10 +2517,10 @@ try{
 			//solty designのAmazon Modern Rankingに対応
 			//元のリンクに高さと幅の設定があった場合変数にセットして後で復元
 			if(obj.hasAttribute("style")){
-				if(obj.getAttribute("style").match("height:")){	
+				if(obj.getAttribute("style").match("height:")){
 					strHW = "height:" + obj.getAttribute("style").replace(/.*height:(.*?)\;.*$/i,"$1") + ";"
 				}
-				if(obj.getAttribute("style").match("width:")){	
+				if(obj.getAttribute("style").match("width:")){
 					strHW += "width:" + obj.getAttribute("style").replace(/.*width:(.*?)\;.*$/i,"$1") + ";"
 				}
 			}
@@ -2593,10 +2590,10 @@ try{
 		//旧設定(noscriptタグ内だと要素ではなく文章になるので廃止予定の様子見)
 		var setTxt = '<' + obj.tagName
 			+ ' coords="' + setCoords + '"'
-			+ ' href="' + strUrl + '"' 
+			+ ' href="' + strUrl + '"'
 			+ ' rel="noreferrer"'
 			+ '>' + strTxt + '</' + obj.tagName + '>';
-		obj.insertAdjacentHTML('afterend', setTxt); 
+		obj.insertAdjacentHTML('afterend', setTxt);
 */
 
 		//元のリンクがaタグじゃなかった場合、aタグにしてノード修正
@@ -2630,7 +2627,7 @@ try{
 //		if(beforeCheck && beforeCheck.match(/added_before/)) domLink.setAttribute("Akill_check",beforeCheck);
 //		else domLink.setAttribute("Akill_check","added_checking");
 
-  
+
 		//google image
 		if(location.host.match(/google\./) && location.href.match(/tbm=isch/) && obj.hasAttribute("jsaction")){
 			domLink.setAttribute("jsaction","str.hc;mousedown:str.hmd;mouseover:str.hmov;mouseout:str.hmou")
@@ -2787,7 +2784,7 @@ try{
 		}
 
 		//GM_xmlhttpRequestが非同期のため、その対応
-		if(!expDB[url] && !url.match(/(getlinkinfo.com|araishi.com)/)){ 
+		if(!expDB[url] && !url.match(/(getlinkinfo.com|araishi.com)/)){
 			expDB[url] = ['',isToday()]
 
 		}else if(expDB[url] && !url.match(/http.*http/)){
@@ -3048,7 +3045,7 @@ try{
 		expDB[url][0] = data;
 		expDB[url][1] = isToday();
 
-		GM_setValue("expDB",JSON.stringify(expDB));
+		localStorage.setItem("expDB",JSON.stringify(expDB));
 	}
 
 
@@ -3097,7 +3094,7 @@ try{
 
 	//DBクリア
 	function clearDB(){
-		if(GM_getValue("expDB")) expDB = JSON.parse(GM_getValue("expDB"));
+		if(localStorage.getItem("expDB")) expDB = JSON.parse(localStorage.getItem("expDB"));
 		else return;
 
 		var today = isToday()
@@ -3110,7 +3107,7 @@ try{
 
 			delete expDB[key];
 
-			GM_setValue("expDB",JSON.stringify(expDB));
+			localStorage.setItem("expDB",JSON.stringify(expDB));
 		}
 
 	}
@@ -3221,9 +3218,9 @@ try{
 				}else if ( charCode == "Unicode" ) {
 					str = unescape(str);
 				}
-				
+
 				return str;
-				
+
 			}catch(e){
 				//throw(e);
 				GM_log("AKiller_URL-DECODE:" + e);
@@ -3388,7 +3385,7 @@ try{
 
 	function userCfg(name){
 		//ユーザ設定から読み込み(Load user's settings)
-		var strText = GM_getValue(name);
+		var strText = localStorage.getItem(name);
 
 		if(strText == "hide"){
 			GM_registerMenuCommand("show all [killer] -now hide all-", showCfg);
@@ -3402,7 +3399,7 @@ try{
 
 			if(strText != "one"){
 				strText = "one";
-				GM_setValue( name, strText);
+				localStorage.setItem( name, strText);
 	//延々とリロードする場合があるので無効
 	//			window.document.location.reload();
 			}
@@ -3410,15 +3407,15 @@ try{
 		return strText;
 	}
 	function showCfg(){
-		GM_setValue( "hideOriginLink", "show");
+		localStorage.setItem( "hideOriginLink", "show");
 		window.document.location.reload();
 	}
 	function hideCfg(){
-		GM_setValue( "hideOriginLink", "hide");
+		localStorage.setItem( "hideOriginLink", "hide");
 		window.document.location.reload();
 	}
 	function oneCfg(){
-		GM_setValue( "hideOriginLink", "one");
+		localStorage.setItem( "hideOriginLink", "one");
 		window.document.location.reload();
 	}
 
@@ -3943,7 +3940,7 @@ document.timer = setTimeout(watcher.init,500);	//linkify系を有効にしてる
 	//追加した監視の削除
 	var onEventUnload = function(){
 		watcher.stop();
-		
+
 		watcher = main = mainCheck = setLink = ecl = expDB = nameDB = cookieDB = null;
 
 		document.removeEventListener("AutoPagerize_DOMNodeInserted", onEventAutoPagerize,false);
