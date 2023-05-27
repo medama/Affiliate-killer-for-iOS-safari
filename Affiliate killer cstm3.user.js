@@ -3382,11 +3382,6 @@ try{
 //======================================================================================
 
 
-	function userCfg(name){
-		//ユーザ設定から読み込み(Load user's settings)
-		localStorage.setItem( "hideOriginLink", "hide"); // 値を"hide"に固定
-}
-
 
 	//パラメータ取得
 	function createParamArray(url){
