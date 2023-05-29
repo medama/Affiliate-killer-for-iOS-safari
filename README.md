@@ -1,6 +1,6 @@
 # Affiliate-killer-for-iOS-safari
-Works on Userscripts
-https://apps.apple.com/jp/app/userscripts/id1463298887
+Works on [Userscripts](https://apps.apple.com/jp/app/userscripts/id1463298887) - for iOS  
+  
 # 課題
 短縮urlでの正しい動作（GM_setvalue,GM_getvalueをどうするか）
 
