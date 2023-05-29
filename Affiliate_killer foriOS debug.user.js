@@ -99,7 +99,7 @@
 	const absAddFlg = true;
 
 	//表示設定
-	var hideOriginLinkFlg = "hide";
+	var hideOriginLinkFlg = "show";
 
 	var expDB = {};		//URL展開履歴
 	var nameDB = {};	//削除用クッキー情報DB
