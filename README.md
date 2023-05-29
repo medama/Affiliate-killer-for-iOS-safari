@@ -9,5 +9,5 @@ Works on [Userscripts](https://apps.apple.com/jp/app/userscripts/id1463298887) -
 noisys https://greasyfork.org/ja/scripts/456-affiliate-killer
 
 ## テストコード
-https://t.co/YT2xSyjzNv
+https://t.co/YT2xSyjzNv  
 [ビッグローブ光](https://join.biglobe.ne.jp/ftth/hikari/?utm_source=biglobe.ne.jp&utm_medium=referral&utm_campaign=btop&utm_content=side_link_ftth_big)
