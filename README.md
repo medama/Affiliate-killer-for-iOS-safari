@@ -7,3 +7,6 @@ Works on [Userscripts](https://apps.apple.com/jp/app/userscripts/id1463298887) -
 
 ## 引用元
 noisys https://greasyfork.org/ja/scripts/456-affiliate-killer
+
+## テストコード
+https://t.co/YT2xSyjzNv
