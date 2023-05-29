@@ -2283,7 +2283,7 @@ try{
 			url = obj.getAttribute('Akill_URL');
 		}
 
-		//GM.xmlHttpRequestが非同期のため、その対応
+		//GM_xmlhttpRequestが非同期のため、その対応
 		if(!expDB[url] && !url.match(/(getlinkinfo.com|araishi.com)/)){
 			expDB[url] = ['',isToday()]
 
