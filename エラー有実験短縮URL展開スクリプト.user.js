@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         短縮URL展開スクリプト
+// @name         エラー有実験短縮URL展開スクリプト
 // @namespace    violentmonkey-shorturl-expander
 // @version      1.0
 // @description  短縮URLを展開して置き換えるスクリプトです。
