@@ -41,7 +41,7 @@
             method: 'HEAD',
             url: link.href,
             onload: function(response) {
-                var originalURL = response.finalUrl || link.href;
+                var originalURL = link.href;
                 var expandedURL = responseURL;
 
                 // Update the URL information in the container element
