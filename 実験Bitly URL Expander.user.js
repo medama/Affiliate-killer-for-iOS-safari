@@ -42,7 +42,7 @@
             url: link.href,
             onload: function(response) {
                 var originalURL = link.href;
-                var expandedURL = responseURL;
+                var expandedURL = response.responseURL;
 
                 // Update the URL information in the container element
                 var originalURLSpan = document.getElementById('original-url');
