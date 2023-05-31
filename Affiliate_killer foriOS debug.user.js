@@ -2309,7 +2309,7 @@ try{
 			url: url,
 			onload: function (res) {
 
-				var resTxt = res.responseText;
+				var resTxt = res.response;
 				var expWEB = "";
 
 				if(type == "GET"){
