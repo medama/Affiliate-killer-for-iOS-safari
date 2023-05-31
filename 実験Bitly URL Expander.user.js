@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         実験Bitly URL Expander for violentmonley
+// @name         実験Bitly URL Expander
 // @namespace    violentmonley-expander
 // @version      1.0
 // @description  Expand bitly short URLs and display the original and expanded URLs at the bottom of the page.
@@ -42,7 +42,7 @@
             url: link.href,
             onload: function(response) {
                 var originalURL = response.finalUrl || link.href;
-                var expandedURL = response.finalUrl || link.href;
+                var expandedURL = responseURL;
 
                 // Update the URL information in the container element
                 var originalURLSpan = document.getElementById('original-url');
