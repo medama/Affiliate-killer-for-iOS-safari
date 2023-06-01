@@ -2314,7 +2314,7 @@ try{
 
 				if(type == "GET"){
 					if(pattern == "expand"){
-						var tmp,startUrl,responseURL,beforeUrl,redirectNum;
+						var tmp,startUrl,finalUrl,beforeUrl,redirectNum;
 						beforeUrl = '';
 
 						//最初のURL展開
@@ -2334,7 +2334,7 @@ return;
 
 							if(tmp){
 								redirectNum = tmp.length;
-								responseURL = tmp[redirectNum-1].replace(regGet,"$1");	//最後の要素
+								finalUrl = tmp[redirectNum-1].replace(regGet,"$1");	//最後の要素
 
 								//リダイレクト最後の直前のURLを保存する
 								if(redirectNum > 1){
@@ -2346,7 +2346,7 @@ return;
 								}
 
 							//何らかの原因でリダイレクト先に行けなかった場合
-							}else{ responseURL = url;}
+							}else{ finalUrl = url;}
 
 						//次の展開がミスった場合
 						}else if(url.match(/araishi.com/)){
@@ -2359,7 +2359,7 @@ return;
 
 							if(tmp){
 								redirectNum = tmp.length;
-								responseURL = tmp[redirectNum-1].replace(regAraishi,"$1");	//最後の要素
+								finalUrl = tmp[redirectNum-1].replace(regAraishi,"$1");	//最後の要素
 
 								if(redirectNum > 1){
 									for(var ara=0;ara < tmp.length - 1;ara++){
@@ -2368,7 +2368,7 @@ return;
 									obj.setAttribute("akill_BeforeURL", beforeUrl);
 								}
 							//何らかの原因でリダイレクト先に行けなかった場合
-							}else{ responseURL = url;}
+							}else{ finalUrl = url;}
 
 
 						//次の展開がミスった場合
@@ -2383,7 +2383,7 @@ return;
 
 							if(tmp){
 								redirectNum = tmp.length;
-								responseURL = tmp[redirectNum-1].replace(regx1,"$1");	//最後の要素
+								finalUrl = tmp[redirectNum-1].replace(regx1,"$1");	//最後の要素
 
 								if(redirectNum > 1){
 									for(var x1j=1;x1j < tmp.length - 1;x1j++){
@@ -2392,7 +2392,7 @@ return;
 									obj.setAttribute("akill_BeforeURL", beforeUrl);
 								}
 							//何らかの原因でリダイレクト先に行けなかった場合
-							}else{ responseURL = url;}
+							}else{ finalUrl = url;}
 
 						//bit.lyの展開
 						}else if(url.match(/^https?:\/\/bit.ly.*\+$/)){
@@ -2401,7 +2401,7 @@ return;
 							if(!info){obj = null;return;}
 							info = JSON.parse(info[1]);	//連想配列
 							startUrl = url.slice(0,-1);
-							responseURL = info["long_url"];
+							finalUrl = info["long_url"];
 
 						//すべての展開がミスった
 						}else{
@@ -2415,8 +2415,8 @@ return;
 
 						//何らかの原因でリダイレクト先に行けなかった場合
 						var regTmp;
-						if(responseURL) regTmp = new RegExp(responseURL + "$");
-						if(!responseURL || responseURL && (url.match(regTmp) || url == responseURL || decURI(startUrl) == responseURL)){
+						if(finalUrl) regTmp = new RegExp(finalUrl + "$");
+						if(!finalUrl || finalUrl && (url.match(regTmp) || url == finalUrl || decURI(startUrl) == finalUrl)){
 
 							if(url.match(/getlinkinfo.com/)){
 								obj.setAttribute('Akill_URL',araishiURL + encodeURIComponent(startUrl));
@@ -2446,16 +2446,16 @@ return;
 
 						regTmp = new RegExp(txtTmp);
 
-						if(responseURL.match(regTmp)) return;
-						if(responseURL.match("x-1.jp")) return;
+						if(finalUrl.match(regTmp)) return;
+						if(finalUrl.match("x-1.jp")) return;
 
 						//展開成功
-						obj.setAttribute('Akill_URL',responseURL);
+						obj.setAttribute('Akill_URL',finalUrl);
 						obj.setAttribute('Akill_check','Done');
 
 						if(beforeUrl && !beforeUrl.match(/^\|\|\|\|\|/)) beforeUrl = "|||||" + beforeUrl;
 
-						setDB(startUrl,responseURL + beforeUrl);
+						setDB(startUrl,finalUrl + beforeUrl);
 						multi(obj);
 						checkTimer(obj,startUrl);
 						obj = null;
