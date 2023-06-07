@@ -3419,5 +3419,5 @@ document.timer = setTimeout(watcher.init,500);	//linkify系を有効にしてる
 	};
 	window.addEventListener('beforeunload',onEventUnload, false);
 */
-alert(allLinks); // 変数をalertで確認
+
 })();
