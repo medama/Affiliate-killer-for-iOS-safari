@@ -70,7 +70,7 @@
 
 	//共通変数&定数-----------------------------------------------------------------
 
-	const getinfoURL = "http://www.getlinkinfo.com/info?link=";					//暫定メイン
+	const getinfoURL = "http://araishi.com/redirect-check/?submit=&url=";					//暫定メイン
 	const araishiURL = "http://araishi.com/redirect-check/?submit=&url=";				//補助
 	const x1URL      = "http://x-1.jp/c.php?u=";							//補助(展開失敗して延々とリダイレクトするサイト側の不備あるので必ず最後)
 
