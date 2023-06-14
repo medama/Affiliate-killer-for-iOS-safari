@@ -1,7 +1,7 @@
 // ==UserScript==
 // @id             Affiliate_killerForiOS_ShowKilledURL
 // @name           Affiliate killerForiOS ShowKilledURL
-// @version        1.1.1
+// @version        1.2
 // @namespace      https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
 // @homepageURL    https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
 // @updateURL      https://github.com/medama/Affiliate-killer-for-iOS-safari/raw/main/Affiliate_killer%20foriOS.user.js
