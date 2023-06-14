@@ -1,6 +1,6 @@
 // ==UserScript==
-// @id             Affiliate_killer foriOS debug
-// @name           Affiliate killer foriOS debug
+// @id             Affiliate_killerForiOS_ShowKilledURL
+// @name           Affiliate killerForiOS ShowKilledURL
 // @version        1.1.1
 // @namespace      https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
 // @homepageURL    https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
@@ -70,7 +70,7 @@
 
 	//共通変数&定数-----------------------------------------------------------------
 
-	const getinfoURL = "http://www.getlinkinfo.com/info?link=";					//暫定メイン
+	const getinfoURL = "http://araishi.com/redirect-check/?submit=&url=";					//暫定メイン
 	const araishiURL = "http://araishi.com/redirect-check/?submit=&url=";				//補助
 	const x1URL      = "http://x-1.jp/c.php?u=";							//補助(展開失敗して延々とリダイレクトするサイト側の不備あるので必ず最後)
 
