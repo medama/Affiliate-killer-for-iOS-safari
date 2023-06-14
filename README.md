@@ -4,7 +4,7 @@ Works on [Userscripts](https://apps.apple.com/jp/app/userscripts/id1463298887) -
 # 課題
 - gitを知らないので勉強  
 - Userscriptsで必要のない処理を元のコードから除去（キー入力の処理など）
-- 下記のような余計な処理をきれいに  
+- ちょっといじったらなんか動いたという状態なので下記のような余計な処理をきれいに  
 - ~~短縮urlでの正しい動作（原因はgetlinkinfo.comとのCORPによる処理停止 safariかUserscriptsとの相性？ 処理が通るurlに書き換える綺麗じゃない方法で対処）~~  
 
 ## 引用元
