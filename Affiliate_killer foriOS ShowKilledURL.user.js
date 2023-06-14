@@ -4,6 +4,7 @@
 // @version        1.1.1
 // @namespace      https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
 // @homepageURL    https://github.com/medama/Affiliate-killer-for-iOS-safari/tree/main
+// @updateURL      https://github.com/medama/Affiliate-killer-for-iOS-safari/raw/main/Affiliate_killer%20foriOS.user.js
 // @license        https://creativecommons.org/licenses/by-nc/2.1/jp/
 // @author         medama
 // @description    No more Affiliate Link! Plz Original URL!
