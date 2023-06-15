@@ -12,6 +12,6 @@ noisys https://greasyfork.org/ja/scripts/456-affiliate-killer
 
 ## テストコード
 テスト用にネット上で見つけたリンク  
-[ビッグローブ光](https://join.biglobe.ne.jp/ftth/hikari/?utm_source=biglobe.ne.jp&utm_medium=referral&utm_campaign=btop&utm_content=side_link_ftth_big)  
+[ビッグローブ光](https://join.biglobe.ne.jp/ftth/hikari/?utm_source=biglobe.ne.jp&utm_medium=referral&utm_campaign=btop&utm_content=side_link_ftth_big) : `https://join.biglobe.ne.jp/ftth/hikari/ ←  https://join.biglobe.ne.jp/ftth/hikari/?utm_source=biglobe.ne.jp&utm_medium=referral&utm_campaign=btop&utm_content=side_link_ftth_big`  
 [yahoo](https://t.co/pCDL8cdjXx) : twitterによる短縮  
 [yahoo](https://bit.ly/2TItk3X)  : bitlyによる短縮  
